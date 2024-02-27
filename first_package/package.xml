@@ -9,6 +9,10 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>ament_cmake_python</buildtool_depend>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a6e3ab7681613de9b5162cbfda8228dce7bb1f8
   <depend>rclpy</depend>
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>

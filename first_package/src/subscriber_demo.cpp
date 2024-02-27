@@ -7,9 +7,14 @@
  * subscribe to String messages on a topic.
  */
 
+<<<<<<< HEAD
 #include "subscriber_interface.hpp"  // Custom subscriber node header
+=======
+>>>>>>> 0a6e3ab7681613de9b5162cbfda8228dce7bb1f8
 #include <std_msgs/msg/string.hpp>  // Include for ROS 2 string messages
 #include <string>                   // Include for std::string
+
+#include "first_package/subscriber_interface.hpp"  // Custom subscriber node header
 
 // Allows using the 'ms' literal for milliseconds
 using namespace std::chrono_literals;
@@ -42,6 +47,8 @@ int main(int argc, char *argv[]) {
   auto subscriber_node = std::make_shared<SubscriberNode>("subscriber_cpp");
   // Keep the node alive and listening for messages
   rclcpp::spin(subscriber_node);
+  
+
   // Shut down ROS 2
-  rclcpp::shutdown();  
+  rclcpp::shutdown();
 }
