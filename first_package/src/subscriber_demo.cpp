@@ -7,7 +7,7 @@
  * subscribe to String messages on a topic.
  */
 
-#include "first_package/subscriber_interface.hpp"  // Custom subscriber node header
+#include "subscriber_interface.hpp"  // Custom subscriber node header
 #include <std_msgs/msg/string.hpp>  // Include for ROS 2 string messages
 #include <string>                   // Include for std::string
 
@@ -17,7 +17,12 @@ using namespace std::chrono_literals;
 //=====================================
 void SubscriberNode::receive_message(
     const std_msgs::msg::String::SharedPtr msg) {
-  RCLCPP_INFO_STREAM(this->get_logger(), "Received data: " << msg->data);
+      saved_msg_.data= msg->data;
+    
+  // RCLCPP_INFO_STREAM(this->get_logger(), "Received data: " << msg->data);
+}
+void SubscriberNode::print_msg(){
+  RCLCPP_INFO_STREAM(this->get_logger(), "NEWW Received data: " << saved_msg_.data);
 }
 
 /**

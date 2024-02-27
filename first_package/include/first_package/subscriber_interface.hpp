@@ -36,11 +36,20 @@ class SubscriberNode : public rclcpp::Node {
     subscriber_ = this->create_subscription<std_msgs::msg::String>(
         "leia", 10,
         std::bind(&SubscriberNode::receive_message, this, std::placeholders::_1));
+
+      // Setup a timer to call timer_callback every 1000 milliseconds
+      timer_ = this->create_wall_timer(
+        std::chrono::milliseconds((int)(2000.0)),
+        std::bind(&SubscriberNode::print_msg, this));
+    
+
   }
+   
 
  private:
   rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscriber_;  ///< Shared pointer to the subscription object.
-  
+  std_msgs::msg::String saved_msg_;
+  rclcpp::TimerBase::SharedPtr timer_;  ///< Timer to trigger publishing.
   /**
    * @brief Callback function for subscription to "leia" topic.
    *
@@ -50,4 +59,5 @@ class SubscriberNode : public rclcpp::Node {
    * @param msg The message received from the topic.
    */
   void receive_message(const std_msgs::msg::String::SharedPtr msg);
+  void print_msg();
 };

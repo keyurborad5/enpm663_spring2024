@@ -13,7 +13,7 @@
 
 #include <rclcpp/rclcpp.hpp>  // Include the necessary header for ROS2 C++ client library
 
-#include "first_package/advanced_interface.hpp"  // Include the header for the AdvancedNode
+#include "advanced_interface.hpp"  // Include the header for the AdvancedNode
 
 /**
  * @brief Main function to initialize and run the ROS2 node.

@@ -8,7 +8,7 @@
  */
 
 #include <rclcpp/rclcpp.hpp>
-#include "first_package/publisher_interface.hpp"
+#include "publisher_interface.hpp"
 
 //=====================================
 void PublisherNode::publish_message() {
